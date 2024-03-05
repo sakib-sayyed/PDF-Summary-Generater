@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDF</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+
+</head>
+<body>
+    <div class="wrapper">
+        <div class="input-container">
+            <div class="heading-container">
+                <h3 id="heading">Select a PDF File</h3>
+                <p id="selectedFileName"></p>
+            </div>
+            <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" id="inputpdf" name="file" accept=".pdf" required onchange="displayFileName(this)">
+                <label for="inputpdf" id="select-pdf" style="display: block;">Choose from Device</label>
+                <button type="submit" id="upload-pdf" hidden>Upload PDF</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+    function displayFileName(input) {
+        // Get the selected file name
+        var fileName = input.files[0].name;
+        document.getElementById('select-pdf').style.display = 'none';
+        document.getElementById('upload-pdf').style.display = 'block';
+        
+        document.getElementById('heading').textContent="Upload File"
+        // Display the selected file name
+        document.getElementById("selectedFileName").textContent = "Selected file : " + fileName;
+
+        document.getElementsByClassName('input-container')[0].style.backgroundColor = "lightgreen"
+    }
+    
+    document.getElementById("uploadForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var form = event.target;
+        form.submit();
+    });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans';
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh;*/
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    height: 100vh;
+}
+/*First container*/
+.input-container{
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    height: 200px;
+    width: 400px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    display: block;
+    background-color: lightgray;
+    overflow:hidden;
+}
+.heading-container h3{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 3px;
+    padding-top: 30px;
+}
+.heading-container p{
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding: 20px;
+    text-align: center;
+    text-wrap: balance;
+}
+#select-pdf,#upload-pdf{
+    text-align: center;
+    width: 80%;
+    padding: 13px 0;
+    border-radius: 15px;
+    background-color: green;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+    margin: auto;
+}
+#select-pdf:hover ,#upload-pdf:hover{
+    background-color: darkgreen;
+}
+#inputpdf {
+    position: absolute;
+    left: -9999px;
+}
